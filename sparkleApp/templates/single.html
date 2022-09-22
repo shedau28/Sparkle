@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+            
+            <!-- Page Header Start -->
+            <div class="page-header">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <h2>Service Details</h2>
+                        </div>
+                        <div class="col-12">
+                            <a href="">Home</a>
+                            <a href="">Service Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Page Header End -->
+
+
+
+            <!-- Single Page Start -->
+            <div class="single">
+                <div class="container">
+                    
+                    <div class="row">
+                        <div class="col-12">
+                        
+                        
+
+                        <div class="card" style="width: 18rem;">
+                            <!-- <img src="..." class="card-img-top" alt="..."> -->
+                            <div class="card-body">
+                              <h3 class="card-title" style="font-weight: bold;">{{service_data.service_name}}</h3>
+                              <hr>
+                              <p class="card-text">{{service_data.desc}}</p>
+                              <hr>
+                              <p class="card-text">Service Started from : {{service_data.created_at}} Rs</p>
+                              <hr>
+                              <p class="card-text">Service Price : {{service_data.service_price}} Rs</p>
+                            </div>
+                            
+                            <form action="/add_to_cart/">
+                            <input type="hidden" name="serv_id" value="{{service_data.id}}" id="serv_id">
+                            <div class="card-body">
+                                <button type="submit" class="card-btn btn-primary btn-lg">Add To Cart</button>
+
+                              <!-- <a href="#" class="card-link">Another link</a> -->
+                            </div>
+                            </form>
+                            
+                            <!-- <div class="card-body">
+                                <button type="button" class="card-btn btn-primary btn-lg">Add To Cart</button>
+
+                               <a href="#" class="card-link">Another link</a> 
+                            </div> -->
+                          </div>
+                        
+                         
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Single Page End -->
+
+{% endblock %}
